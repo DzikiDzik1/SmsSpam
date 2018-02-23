@@ -46,7 +46,7 @@ public class SmsPage {
     }
 
     public SmsPage sendSms(){
-        sendBtn.click();
+        sendBtn.submit();
         return this;
     }
 
