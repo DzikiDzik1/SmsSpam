@@ -13,16 +13,16 @@ public class SmsPage {
     private String line;
 
     @FindBy(id = "number")
-    WebElement numberField;
+    private WebElement numberField;
 
     @FindBy(id = "message")
-    WebElement messageField;
+    private WebElement messageField;
 
     @FindBy(id = "sender")
-    WebElement senderField;
+    private WebElement senderField;
 
     @FindBy(id = "send")
-    WebElement sendBtn;
+    private WebElement sendBtn;
 
     public SmsPage(WebDriver driver){
         this.driver = driver;
