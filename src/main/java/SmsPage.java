@@ -2,6 +2,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ public class SmsPage {
 
     private WebDriver driver;
     private String line;
+    private WebDriverWait wait;
 
     @FindBy(id = "number")
     private WebElement numberField;
@@ -23,6 +26,9 @@ public class SmsPage {
 
     @FindBy(id = "send")
     private WebElement sendBtn;
+
+    @FindBy(id = "big-ok")
+    private WebElement confirmation;
 
     public SmsPage(WebDriver driver){
         this.driver = driver;
@@ -63,6 +69,8 @@ public class SmsPage {
     }
 
     public SmsPage returnToHomepage() {
+        wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(confirmation));
         driver.get("https://sms.priv.pl/");
         return this;
     }

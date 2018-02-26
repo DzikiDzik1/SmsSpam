@@ -37,15 +37,7 @@ public class SmsSpamTest {
     @DataProvider(name = "numberProvider")
     public Object[][] getRandomNumber(){
         return new Object[][]{
-                {"730601900"},
-                {"791967233"},
-                {"608862323"},
-                {"791862202"},
-                {"730529471"},
-                {"600108553"},
-                {"737134123"},
-                {"731065130"},
-                {"793693424"}
+                {"731065130"}
         };
     }
 }
